@@ -15,6 +15,12 @@ pipeline {
         echo 'Package...'
      }
    }
+	  stage('Artifact Push') {
+     steps {	          	   
+             sh(script: 'mvn deploy ')	    
+        echo 'Artifact Push...'
+     }
+   }
     
      stage('Deploy to Production') {
        steps {	
